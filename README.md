@@ -41,7 +41,7 @@ Use the following command to start the container.
 make run
 ```
 
-All the following commands will be executed inside the container. 
+All the following commands will be executed inside the container.
 
 ### Create your install-config.yaml
 
@@ -180,3 +180,6 @@ Besides that a RedHat OpenShift pull secret is necessary, which could be obtaine
 ## Author
 
 - [slauger](https://github.com/slauger)
+
+## Modified
+- [JosephEnd](https://github.com/JosephEnd)
