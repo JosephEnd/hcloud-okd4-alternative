@@ -1,4 +1,4 @@
-resource "hcloud_server" "server" {
+resource "hcloud_server" "services" {
 #  count       = var.instance_count
   name        = "${format("${var.name}")}.${var.dns_domain}"
   image       = var.image
@@ -25,14 +25,14 @@ resource "hcloud_floating_ip" "services-ip" {
 
 resource "hcloud_rdns" "dns-ptr-ipv4" {
   count      = var.instance_count
-  server_id  = element(hcloud_server.server.*.id, count.index)
-  ip_address = element(hcloud_server.server.*.ipv4_address, count.index)
-  dns_ptr    = element(hcloud_server.server.*.name, count.index)
+  server_id  = element(hcloud_server.services.*.id, count.index)
+  ip_address = element(hcloud_server.services.*.ipv4_address, count.index)
+  dns_ptr    = element(hcloud_server.services.*.name, count.index)
 }
 
 resource "hcloud_rdns" "dns-ptr-ipv6" {
   count      = var.instance_count
-  server_id  = element(hcloud_server.server.*.id, count.index)
-  ip_address = "${element(hcloud_server.server.*.ipv6_address, count.index)}1"
-  dns_ptr    = element(hcloud_server.server.*.name, count.index)
+  server_id  = element(hcloud_server.services.*.id, count.index)
+  ip_address = "${element(hcloud_server.services.*.ipv6_address, count.index)}1"
+  dns_ptr    = element(hcloud_server.services.*.name, count.index)
 }
