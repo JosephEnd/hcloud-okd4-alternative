@@ -1,9 +1,9 @@
 output "server_ids" {
-  value = "${hcloud_server.server.*.id}"
+  value = "${hcloud_server.services.*.id}"
 }
 
 output "server_names" {
-  value = "${hcloud_server.server.*.name}"
+  value = "${hcloud_server.services.*.name}"
 }
 
 #output "internal_ipv4_addresses" {
@@ -11,9 +11,9 @@ output "server_names" {
 #}
 
 output "ipv4_addresses" {
-  value = "${hcloud_server.server.*.ipv4_address}"
+  value = "${hcloud_server.services.*.ipv4_address}"
 }
 
 output "ipv6_addresses" {
-  value = "${hcloud_server.server.*.ipv6_address}"
+  value = "${hcloud_server.services.*.ipv6_address}"
 }

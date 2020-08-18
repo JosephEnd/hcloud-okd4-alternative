@@ -1,6 +1,6 @@
 variable "name" {
   type        = string
-  description = "Instance nam"
+  description = "Instance name"
 }
 
 variable "dns_domain" {
@@ -15,7 +15,7 @@ variable "dns_zone_id" {
 
 variable "dns_internal_ip" {
   description = "Point DNS record to internal ip"
-  default     = false
+  default     = true
 }
 
 variable "instance_count" {

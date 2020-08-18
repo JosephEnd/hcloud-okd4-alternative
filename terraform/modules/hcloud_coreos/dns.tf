@@ -1,3 +1,4 @@
+/*
 resource "cloudflare_record" "dns-a" {
   count   = var.instance_count
   zone_id = var.dns_zone_id
@@ -7,3 +8,4 @@ resource "cloudflare_record" "dns-a" {
   type  = "A"
   ttl   = 1
 }
+*/

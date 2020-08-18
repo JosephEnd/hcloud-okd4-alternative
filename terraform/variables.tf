@@ -1,6 +1,6 @@
 variable "replicas_master" {
   type        = number
-  default     = 1
+  default     = 3
   description = "Count of master replicas"
 }
 
@@ -44,19 +44,13 @@ variable "ip_loadbalancer_apps" {
 variable "network_cidr" {
   type        = string
   description = "CIDR for the network"
-  default     = "192.168.0.0/16"
+  default     = "10.5.0.0/16"
 }
 
 variable "subnet_cidr" {
   type        = string
   description = "CIDR for the subnet"
-  default     = "192.168.254.0/24"
-}
-
-variable "lb_subnet_cidr" {
-  type        = string
-  description = "CIDR for the loadbalancer subnet"
-  default     = "192.168.253.0/24"
+  default     = "10.5.0.0/16"
 }
 
 variable "location" {

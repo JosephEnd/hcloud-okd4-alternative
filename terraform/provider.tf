@@ -1,9 +1,9 @@
 provider "cloudflare" {
-  version = "2.9.0"
+  version = "~> 2.9.0"
 }
 
 provider "hcloud" {
-  version = "1.20.0"
+  version = "~> 1.20.0"
 }
 
 provider "template" {

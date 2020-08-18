@@ -1,12 +1,11 @@
-output "ignition" {
-  value = module.ignition
+output "services" {
+  value = module.services
 }
 output "bootstrap" {
   value = module.bootstrap
 }
-output "master" {
-  value = module.master
-}
+output "control" {
+  value = module.control
 output "worker" {
   value = module.worker
 }
