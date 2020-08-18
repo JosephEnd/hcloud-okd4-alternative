@@ -19,7 +19,7 @@ The deployment defaults to a 4 node cluster : 3x Control, 1x Worker, 1x Service 
 - 1x Internal Network with server added.
 - 1x Services Node (CX11) - Hosts: HAproxy, Bind.
 - 1x Bootstrap Node (CX21) - deleted after cluster bootstrap.
-- 3x Control [Master] Node (CX21)
+
 
 ## Usage
 
