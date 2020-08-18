@@ -1,6 +1,6 @@
 resource "hcloud_server" "server" {
-  count       = var.instance_count
-  name        = "${format("${var.name}%02d", count.index + 1)}.${var.dns_domain}"
+#  count       = var.instance_count
+  name        = "${format("${var.name}")}.${var.dns_domain}"
   image       = var.image
   server_type = var.server_type
   keep_disk   = var.keep_disk
@@ -11,6 +11,16 @@ resource "hcloud_server" "server" {
   lifecycle {
     ignore_changes = [user_data, image]
   }
+}
+
+resource "hcloud_floating_ip_assignment" "services-main" {
+  floating_ip_id = "${hcloud_floating_ip.services-ip.id}"
+  server_id = "${hcloud_server.services.id}"
+}
+
+resource "hcloud_floating_ip" "services-ip" {
+  type = "ipv4"
+  home_location = "nbg1"
 }
 
 resource "hcloud_rdns" "dns-ptr-ipv4" {
