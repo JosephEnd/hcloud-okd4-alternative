@@ -12,8 +12,8 @@ resource "hcloud_network_subnet" "subnet" {
 
 
 resource "hcloud_floating_ip_assignment" "services-main" {
-  floating_ip_id = "${hcloud_floating_ip.services-ip.id}"
-  server_id = "${hcloud_server.services.id}"
+  floating_ip_id = "hcloud_floating_ip.services-ip.id"
+  server_id = "hcloud_server.services.id"
 }
 
 resource "hcloud_server" "services" {
