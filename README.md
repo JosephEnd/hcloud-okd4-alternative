@@ -1,7 +1,7 @@
 ![Docker Build](https://github.com/slauger/hcloud-okd4/workflows/Docker%20Build/badge.svg) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=slauger/hcloud-okd4)](https://dependabot.com)
 
 
-# hcloud-okd4
+# hcloud-okd4-alternative
 
 Deploy OKD4 (OpenShift) on Hetzner Cloud using Hashicorp Packer, Terraform and Ansible.
 
@@ -13,12 +13,15 @@ Because of that OpenShift on hcloud is only suitable for small test environments
 
 ## Architecture
 
-The deployment defaults to a single node cluster.
+The deployment defaults to a 4 node cluster : 3x Control, 1x Worker, 1x Service node.
 
-- 1x Master Node (CX41)
-- 1x Loadbalancer (LB11)
-- 1x Bootstrap Node (CX41) - deleted after cluster bootstrap
-- 1x Ignition Node (CX11) - deleted after cluster bootstrap
+- 1x Floating IP to "Services" nodes with HAproxy
+- 1x Internal Network with server added.
+- 1x Services Node (CX11) - Hosts: HAproxy, Bind
+- 1x Bootstrap Node (CX21) - deleted after cluster bootstrap
+- 3x Control [Master] Node (CX21)
+
+
 
 ## Usage
 
