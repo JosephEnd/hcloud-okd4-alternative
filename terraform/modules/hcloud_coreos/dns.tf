@@ -1,4 +1,4 @@
-resource "cloudflare_record" "dns-a" {
+/* resource "cloudflare_record" "dns-a" {
   count   = var.instance_count
   zone_id = var.dns_zone_id
   name    = element(hcloud_server.server.*.name, count.index)
@@ -7,3 +7,4 @@ resource "cloudflare_record" "dns-a" {
   type  = "A"
   ttl   = 1
 }
+*/
