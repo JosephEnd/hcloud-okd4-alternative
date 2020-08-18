@@ -186,3 +186,7 @@ Besides that a RedHat OpenShift pull secret is necessary, which could be obtaine
 
 ## Modified
 - [JosephEnd](https://github.com/JosephEnd)
+
+## Modifications:
+
+-FIX: issue with Build in make files, a fresh Docker install would not get internet connection, domain resolution and dependencies faild to Fetch/wget. Added: "build: docker build --network=host"
