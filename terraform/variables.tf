@@ -1,3 +1,19 @@
+variable "network_id" {
+  type	      = number
+  default     = 1
+}
+
+variable "server_id" {
+  type        = number
+  default     = 1
+}
+
+variable "instance_count" {
+  type        = number
+  description = "Number of instances to deploy"
+  default     = 1
+}
+
 variable "replicas_master" {
   type        = number
   default     = 3
@@ -44,13 +60,13 @@ variable "ip_loadbalancer_apps" {
 variable "network_cidr" {
   type        = string
   description = "CIDR for the network"
-  default     = "10.5.0.0/16"
+  default     = "10.5.0.0/24"
 }
 
 variable "subnet_cidr" {
   type        = string
   description = "CIDR for the subnet"
-  default     = "10.5.0.0/16"
+  default     = "10.5.0.0/24"
 }
 
 variable "location" {
@@ -64,3 +80,4 @@ variable "image" {
   description = "Image selector (either fcos or rhcos)"
   default     = "fcos"
 }
+

@@ -12,6 +12,7 @@ module "services" {
   subnet         = hcloud_network_subnet.subnet.id
 }
 
+
 module "bootstrap" {
   source           = "./modules/hcloud_coreos"
   instance_count   = var.bootstrap == true ? 1 : 0
@@ -58,3 +59,5 @@ module "worker" {
   ignition_cacert  = local.ignition_worker_cacert
   ignition_version = var.image == "fcos" ? "3.0.0" : "2.2.0"
 }
+
+
