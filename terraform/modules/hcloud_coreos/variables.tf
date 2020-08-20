@@ -1,3 +1,9 @@
+variable "server_id" {
+  type        = number
+  default     = 1
+}
+*/
+
 variable "name" {
   type        = string
   description = "Instance name"
@@ -103,4 +109,16 @@ variable "ignition_version" {
   type        = string
   description = "Ignition Version"
   default     = "3.0.0"
+}
+
+variable "network_cidr" {
+  type        = string
+  description = "CIDR for the network"
+  default     = "10.5.0.0/24"
+}
+
+variable "subnet_cidr" {
+  type        = string
+  description = "CIDR for the subnet"
+  default     = "10.5.0.0/24"
 }

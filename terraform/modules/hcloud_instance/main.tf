@@ -1,5 +1,5 @@
 resource "hcloud_server" "server" {
-#  count       = var.instance_count
+  count       = var.instance_count
   name        = "${format("${var.name}")}.${var.dns_domain}"
   image       = var.image
   server_type = var.server_type
@@ -14,14 +14,17 @@ resource "hcloud_server" "server" {
 }
 
 resource "hcloud_floating_ip_assignment" "services-main" {
-  floating_ip_id = "${hcloud_floating_ip.services-ip.id}"
-  server_id = "${hcloud_server.services.id}"
+  count = var.instance_count
+  floating_ip_id = hcloud_floating_ip.services-ip.id
+  server_id = element(hcloud_server.server.*.id, count.index)
 }
 
 resource "hcloud_floating_ip" "services-ip" {
   type = "ipv4"
   home_location = "nbg1"
 }
+
+
 
 resource "hcloud_rdns" "dns-ptr-ipv4" {
   count      = var.instance_count

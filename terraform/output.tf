@@ -6,6 +6,7 @@ output "bootstrap" {
 }
 output "control" {
   value = module.control
+}
 output "worker" {
   value = module.worker
 }

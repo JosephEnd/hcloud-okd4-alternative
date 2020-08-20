@@ -81,3 +81,15 @@ variable "subnet" {
   type        = string
   description = "Id of the additional internal network"
 }
+
+variable "network_cidr" {
+  type        = string
+  description = "CIDR for the network"
+  default     = "10.5.0.0/24"
+}
+
+variable "subnet_cidr" {
+  type        = string
+  description = "CIDR for the subnet"
+  default     = "10.5.0.0/24"
+}
