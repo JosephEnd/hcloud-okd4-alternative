@@ -195,3 +195,4 @@ Besides that a RedHat OpenShift pull secret is necessary, which could be obtaine
 - ADDED "Floating IP" creation.
 - ADDED "Floating IP" assignment to "Services" // Public IP for HAproxy
 - ENABLED "Internal network" creation and server/instance assignment.
+- Private repository
